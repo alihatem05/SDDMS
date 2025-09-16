@@ -1,0 +1,58 @@
+{
+  "base_dir": "C:/Users/aliha/Desktop/SDDMS",
+  "input_dir": "pending",
+  "output_dir": "processed",
+  "output_subdirs": ["clean", "quarantined"],
+  "allowed_extensions": [".csv"],
+  "actions": {
+    "success": "clean",
+    "failure": "quarantined"
+  },
+  "constraints_catalog": {
+    "int": ["nullable", "min", "max"],
+    "float": ["nullable", "min", "max"],
+    "string": ["nullable", "min_length", "max_length", "format"]
+  },
+  "csv_structure": {
+    "first_name": {
+      "type": "string",
+      "nullable": false,
+      "min_length": 2,
+      "max_length": 30,
+      "format": "([a-z]|[A-Z])+"
+    },
+    "last_name": {
+      "type": "string",
+      "nullable": false,
+      "min_length": 2,
+      "max_length": 30,
+      "format": "([a-z]|[A-Z])+"
+    },
+    "grade": {
+        "type": "int",
+        "nullable": false,
+        "min": 1,
+        "max": 12
+    },
+    "gpa": {
+        "type": "float",
+        "nullable": false,
+        "min": 0.0,
+        "max": 4.0
+    },
+    "gender": {
+        "type": "string",
+        "nullable": false,
+        "min_length": 1,
+        "max_length": 1,
+        "format": "(M|F)"
+    },
+    "date_of_birth": {
+        "type": "string",
+        "nullable": true,
+        "min_length": 0,
+        "max_length": 20,
+        "format": "^([0-9]|[12][0-9]|3[01])/([1-9]|1[0-2])/(19[0-9]{2}|20[0-2][0-9])$"
+    }
+  }
+}
