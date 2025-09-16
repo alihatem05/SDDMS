@@ -1,5 +1,5 @@
 {
-  "base_dir": "C:/Users/aliha/Desktop/SDDMS",
+  "base_dir": "Organizer",
   "input_dir": "pending",
   "output_dir": "processed",
   "output_subdirs": ["clean", "quarantined"],
